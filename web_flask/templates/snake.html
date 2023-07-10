@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Mania</title>
+  <link rel="stylesheet" type="text/css" href="static/css/snake.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="static/js/snake.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a class="navbar-brand" href="#">Snake Mania</a>
+    <ul class="navbar-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div id="game-container" class="game-con">
+    <canvas id="gc" class="game-canvas" width="600" height="600"></canvas>
+  </div>
+  <div class="keys">
+    <a class="left arr" onclick="Snake.action('left')">
+      <i class="chevron left"></i></a>
+    <a class="up arr" onclick="Snake.action('up')">
+      <i class="chevron up"></i></a>
+    <a class="right arr" onclick="Snake.action('right')">
+      <i class="chevron right"></i></a>
+    <a class="down arr" onclick="Snake.action('down')">
+      <i class="chevron down"></i></a>
+  </div>
+
+</body>
+
+</html>

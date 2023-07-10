@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar-brand img {
+  height: 30px;
+  /* Adjust the height as needed */
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.game-canvas {
+  
+  width: 100%;
+  height: 100wh;
+  max-width: 600px;
+  max-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.keys {
+  border: 10px solid black;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 200px;
+  margin: auto;
+}
+
+.chevron::before {
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  top: 15px;
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.chevron.down::before {
+  transform: rotate(135deg);
+  top: 5px;
+}
+
+.right {
+  position: relative;
+  top: 40px;
+}
+
+.chevron.right::before {
+  transform: rotate(45deg);
+  top: -28px;
+  left: -5px;
+}
+
+.left {
+
+  position: relative;
+  top: 42px;
+}
+
+.chevron.left::before {
+  transform: rotate(225deg);
+  top: -28px;
+  left: 5px;
+}
+
+.arr {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 1px;
+  background: gray;
+  color: white;
+  font-size: 50px;
+  border-right: 10px solid #ccc;
+  border-bottom: 10px solid #ccc;
+  border-left: 10px solid #ddd;
+  border-top: 10px solid #eee;
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;
+  user-select: none;
+}
+
+@media (max-width: 320px) {
+  .game-canvas {
+    background-image: url("../images/grass.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100wh;
+    max-width: 800px;
+    max-height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chevron::before {
+    border-style: solid;
+    border-width: 8px 8px 0 0;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    top: 15px;
+    position: relative;
+    transform: rotate(-45deg);
+  }
+
+  .chevron.down::before {
+    transform: rotate(135deg);
+    top: 5px;
+  }
+
+  .right {
+    position: relative;
+    top: 40px;
+  }
+
+  .chevron.right::before {
+    transform: rotate(45deg);
+    top: -28px;
+    left: -5px;
+  }
+
+  .left {
+
+    position: relative;
+    top: 42px;
+  }
+
+  .chevron.left::before {
+    transform: rotate(225deg);
+    top: -28px;
+    left: 5px;
+  }
+
+  .arr {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 1px;
+    background: gray;
+    color: white;
+    font-size: 50px;
+    border-right: 10px solid #ccc;
+    border-bottom: 10px solid #ccc;
+    border-left: 10px solid #ddd;
+    border-top: 10px solid #eee;
+    display: inline-block;
+    margin: 5px;
+    transition: all .05s linear;
+    user-select: none;
+  }
+}
+
+
+.arr:active {
+  background: #555;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(220, 220, 220, 0.6);
+}
