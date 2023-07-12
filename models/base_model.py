@@ -21,7 +21,7 @@ class BaseModel:
     """The BaseModel class from which future classes will be derived"""
     if models.storage_t == "db":
         id = Column(String(60), primary_key=True)
-        gamestate = Column(Boolean, default=False)
+        game_state = Column(Boolean, default=False)
         created_at = Column(DateTime, default=datetime.utcnow)
         updated_at = Column(DateTime, default=datetime.utcnow)
 
@@ -43,6 +43,7 @@ class BaseModel:
                 self.id = str(uuid.uuid4())
         else:
             self.id = str(uuid.uuid4())
+            self.game_state = False
             self.created_at = datetime.utcnow()
             self.updated_at = self.created_at
 
