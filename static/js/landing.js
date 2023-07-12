@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  $('.nav-toggle').click(function() {
+$(document).ready(function () {
+  $('.nav-toggle').click(function () {
     $('.nav-menu').slideToggle();
   });
 });

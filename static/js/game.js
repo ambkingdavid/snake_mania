@@ -105,7 +105,7 @@ $(document).ready(function () {
       // Draw snake's body as a circular shape
       context.fillStyle = "#023020"; // Color of the snake's body
     }
-  
+
     context.beginPath();
     context.arc(
       snakePart.x * gridSize + gridSize / 2, // center x-coordinate
@@ -118,7 +118,7 @@ $(document).ready(function () {
     context.strokeStyle = "#000";
     context.stroke();
   }
-  
+
 
 
 

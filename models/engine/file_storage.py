@@ -5,12 +5,10 @@ Contains the FileStorage class
 
 import json
 import models
-from models.base_model import BaseModel
-from models.game_state import GameState
 from models.user import User
 from hashlib import md5
 
-classes = {"GameState": GameState, "User": User}
+classes = {"User": User}
 
 
 class FileStorage:

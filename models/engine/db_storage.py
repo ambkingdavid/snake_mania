@@ -5,16 +5,16 @@ Contains the class DBStorage
 
 import models
 from models.base_model import BaseModel, Base
-from models.game_state import GameState
 from models.user import User
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-classes = {"GameState": GameState, "User": User}
+classes = {"User": User}
+
 
 class DBStorage:
-    """interaacts with the MySQL database"""
+    """interacts with the MySQL database"""
     __engine = None
     __session = None
 
@@ -43,7 +43,7 @@ class DBStorage:
                     key = obj.__class__.__name__ + '.' + obj.id
                     new_dict[key] = obj
         return (new_dict)
-    
+
     def new(self, obj):
         """add the object to the current database session"""
         self.__session.add(obj)

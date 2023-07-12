@@ -30,6 +30,7 @@ def not_found(error):
     """
     return make_response(jsonify({'error': "Not found"}), 404)
 
+
 app.config['SWAGGER'] = {
     'title': 'Snake Mania',
     'uiversion': 3

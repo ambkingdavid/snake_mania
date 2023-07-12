@@ -11,14 +11,14 @@ $('document').ready(function () {
 
   $('.modal > .modal-dialog > .modal-content > .modal-footer > button').click(function () {
     $.ajax({
-        url: api + ':5001/api/game_state',
-        type: "POST",
-        data: JSON.stringify({
-          'gameState': Object.keys(game_state)
-        }),
-        contentType: 'application/json',
-        dataType: 'json',
-        success: "OK"
+      url: api + ':5001/api/game_state',
+      type: "POST",
+      data: JSON.stringify({
+        'gameState': Object.keys(game_state)
+      }),
+      contentType: 'application/json',
+      dataType: 'json',
+      success: "OK"
     });
   });
 });
