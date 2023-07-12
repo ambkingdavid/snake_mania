@@ -4,7 +4,7 @@
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
-from sqlalchemy import Column, String, UniqueConstraint
+from sqlalchemy import Column, String, UniqueConstraint, Boolean
 from sqlalchemy.orm import relationship
 from hashlib import md5
 
@@ -13,12 +13,14 @@ class User(BaseModel, Base):
     """Representation of a user """
     if models.storage_t == 'db':
         __tablename__ = 'users'
+        gamestate = Column(Boolean)
         password = Column(String(128), nullable=False)
         username = Column(String(128), nullable=False, unique=True)
         __table_args__ = (UniqueConstraint('username', name='unique_username'),)
     else:
         username = ""
         password = ""
+        gamestate = False
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
