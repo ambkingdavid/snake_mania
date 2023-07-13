@@ -13,13 +13,14 @@ class User(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = 'users'
         password = Column(String(128), nullable=False)
+        email = Column(String(128), nullable=False, unique=True)
         username = Column(String(128), nullable=False, unique=True)
         __table_args__ = (UniqueConstraint(
             'username', name='unique_username'),)
     else:
         username = ""
         password = ""
-        gamestate = False
+        email = ""
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
