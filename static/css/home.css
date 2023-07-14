@@ -19,6 +19,7 @@ body {
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 35vh;
+    height: 40vh;
+    font-size: 10px;
   }
 }
