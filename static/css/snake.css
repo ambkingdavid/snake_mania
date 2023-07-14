@@ -49,7 +49,7 @@ body {
 }
 
 .keys {
-  border: 10px solid black;
+  /* border: 10px solid black; */
   font-family: 'Lato', sans-serif;
   text-align: center;
   width: 100%;
@@ -59,6 +59,7 @@ body {
   margin: auto;
 }
 
+/* arrows */
 .chevron::before {
   border-style: solid;
   border-width: 8px 8px 0 0;
@@ -71,9 +72,17 @@ body {
   transform: rotate(-45deg);
 }
 
+/* arrow_down */
 .chevron.down::before {
   transform: rotate(135deg);
-  top: 5px;
+  top: -70px;
+  right: -168px;
+}
+
+.down {
+  position: relative;
+  top: 80px;
+  right: 168px;
 }
 
 .right {
@@ -118,7 +127,7 @@ body {
   user-select: none;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   .game-canvas {
     background-image: url("../images/grass.jpg");
     background-size: cover;
@@ -132,7 +141,7 @@ body {
 
   .chevron::before {
     border-style: solid;
-    border-width: 8px 8px 0 0;
+    border-width: 1px 1px 0 0;
     content: '';
     display: inline-block;
     height: 20px;

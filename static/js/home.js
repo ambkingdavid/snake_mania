@@ -1,24 +1,72 @@
 $('document').ready(function () {
   const api = 'http://' + window.location.hostname;
-  let gameState;
-  $('.modal > .modal-dialog > .modal-content > .modal-body > .form-check > input[type="checkbox"]').change(function () {
-    if ($(this).is(':checked')) {
-      gameState = true;
-    } else {
-      gameState = false;
-    }
-  });
+  let username = "player" + Date.now();
+  let email = "default@default.com"
+  password = Date.now().toString()
+  let gameState = false
 
-  $('.modal > .modal-dialog > .modal-content > .modal-footer > button').click(function () {
+  $('.play').click(function () {
+    console.log('clicked button')
     $.ajax({
-      url: api + ':5001/api/game_state',
+      url: api + ':5000/api/v1/users',
       type: "POST",
       data: JSON.stringify({
-        'gameState': Object.keys(game_state)
+          username: username,
+          email: email,
+          password: password
       }),
       contentType: 'application/json',
       dataType: 'json',
-      success: "OK"
+      success: function (response) {
+        const user_id = response.id;
+        window.location.href = api + ':5001/user/' + user_id
+      }
     });
+  });
+  
+
+  $('.login-form').submit(function(event) {
+    event.preventDefault(); 
+    username = $('#username_log').val();
+    password = $('#password_log').val();
+
+    $.ajax({
+      url: api + ':5000/api/v1/users/get_user',
+      type: "POST",
+      data: JSON.stringify({
+          username: username,
+          password: password
+      }),
+      contentType: 'application/json',
+      dataType: 'json',
+      success: function(response) {
+        const user = response;
+        window.location.href = api + ':5001/user/' + user.id
+      }
+    });
+  
+  });
+
+
+
+  $('.signup-form').submit(function(event) {
+    event.preventDefault(); 
+    username = $('#username').val();
+    email = $('#email').val()
+    password = $('#password').val();
+
+    $.ajax({
+      url: api + ':5000/api/v1/users',
+      type: "POST",
+      data: JSON.stringify({
+          username: username,
+          email: email,
+          password: password
+      }),
+      contentType: 'application/json',
+      dataType: 'json',
+      success: "ok"
+    });
+  
   });
 });

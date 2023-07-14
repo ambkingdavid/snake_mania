@@ -21,13 +21,13 @@
   <nav class="navbar bg-dark border-bottom border-bottom-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <!-- Navbar content -->
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Snake Mania</a>
+      <a class="navbar-brand justify-content-start" href="#">Snake Mania</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div class="navbar-nav justify-content-end">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
           <a class="nav-link" href="#about">About</a>
           <a class="nav-link" href="#">Contact</a>
@@ -37,13 +37,15 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero-section d-flex flex-column align-items-center justify-content-center border">
-    <div class="buttons col-4 d-flex justify-content-between mb-3">
-      <a href="snake"><button type="button" class="btn btn-success px-5">Play</button></a>
-      <button type="button" class="btn btn-warning px-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-        aria-expanded="false" aria-controls="panel">Settings</button>
+  <div class="hero-section d-flex align-items-center justify-content-center border">
+    <div class="buttons col-4 d-flex flex-column justify-content-between">
+      <button type="button" class="btn btn-success col-12 play mb-2">Play</button>
+      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
+        aria-expanded="false" aria-controls="panel">Log-in</button>
+      <div class="col-12 text-black text-center">Don't have an account? sign-up <a href="" data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop2" aria-expanded="false" aria-controls="panel">here</a> </div>
     </div>
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm modal-dialog-centered">
         <div class="modal-content bg-warning">
@@ -52,15 +54,50 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Walls
-              </label>
-            </div>
+            <form class="row g-3 text-white login-form">
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username_log">
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password_log">
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success">Log-in</button>
+              </div>
+            </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success save">Save changes</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content bg-warning">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Settings</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 text-white signup-form">
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username">
+              </div>
+              <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="">
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success">Sign in</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
